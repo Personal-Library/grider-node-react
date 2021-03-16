@@ -1,0 +1,37 @@
+# Emaily
+
+## Description
+
+This app allows users to send and collect feedback via email survey forms. The project was created for educational purposes during Stephen Grider's Node with React: Fullstack Web Development course on udemy.
+
+## Installation
+
+The project is separated into a frontend `client` directory and a backend `server` directory. In order to access and run either of them:
+
+Clone the repository
+
+`git clone git@github.com:Personal-Library/grider-node-react.git`
+
+Change into the directory
+
+`cd <directory name>`
+
+Install dependencies
+
+`npm install`
+
+Start project preview
+
+`npm run dev` for the backend or `npm start` for the frontend
+
+## Usage
+
+The user is able to authenticate using Google OAuth 2.0, pay for credits via the Stripe API, and use those credits to create survey forms that are sent out to an email list. The user is then able to view the results and status of their surveys. 
+
+## Contributing
+
+This project is not accepting contributions. You are welcome to modify and distribute any versions as you please.
+
+## License
+
+MIT License
