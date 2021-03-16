@@ -6,7 +6,7 @@ This app allows users to send and collect feedback via email survey forms. The p
 
 ## Installation
 
-The project is separated into a frontend `client` directory and a backend `server` directory. In order to access and run either of them:
+The project is separated into a frontend `client` directory and a backend root directory. In order to access and run either of them:
 
 Clone the repository
 
