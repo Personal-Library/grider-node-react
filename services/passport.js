@@ -22,6 +22,7 @@ passport.use(
 			clientID: keys.googleClientId,
 			clientSecret: keys.googleClientSecret,
 			callbackURL: '/auth/google/callback',
+			proxy: true,
 		},
 		(accessToken, refreshToken, profile, done) => {
 			// Check to see if we have a user with profile.id
