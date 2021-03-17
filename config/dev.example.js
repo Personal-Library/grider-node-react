@@ -4,4 +4,6 @@ module.exports = {
 	googleClientSecret: '',
 	mongoUri: '',
 	cookieKey: '',
+	stripePublishableKey: '',
+	stripeSecretKey: '',
 };
