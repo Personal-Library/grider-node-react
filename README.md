@@ -4,6 +4,14 @@
 
 This app allows users to send and collect feedback via email survey forms. The project was created for educational purposes during Stephen Grider's Node with React: Fullstack Web Development course on udemy.
 
+## Technologies
+
+- React/Redux
+- MaterializeCSS
+- Express/Node
+- MongoDB/Mongoose
+- Sendgrid
+
 ## Installation
 
 The project is separated into a frontend `client` directory and a backend root directory. In order to access and run either of them:
@@ -11,6 +19,8 @@ The project is separated into a frontend `client` directory and a backend root d
 Clone the repository
 
 `git clone git@github.com:Personal-Library/grider-node-react.git`
+
+Replace all the keys in .env.production.example, .env.development.example, and dev.example.js
 
 Change into the directory
 
@@ -20,13 +30,13 @@ Install dependencies
 
 `npm install`
 
-Start project preview
+Start local development server
 
 `npm run dev` for the backend or `npm start` for the frontend
 
 ## Usage
 
-The user is able to authenticate using Google OAuth 2.0, pay for credits via the Stripe API, and use those credits to create survey forms that are sent out to an email list. The user is then able to view the results and status of their surveys. 
+The user is able to authenticate using Google OAuth 2.0, pay for credits via the Stripe API, and use those credits to create survey forms that are sent out to an email list. The user is then able to view the results and status of their surveys.
 
 ## Contributing
 

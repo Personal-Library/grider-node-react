@@ -4,6 +4,7 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const keys = require('./config/keys');
 require('./models/User');
+require('./models/Survey');
 // Make sure that the User models are required first so that passport can use them
 require('./services/passport');
 
@@ -13,7 +14,7 @@ mongoose.connect(keys.mongoUri, { useNewUrlParser: true, useUnifiedTopology: tru
 
 const app = express();
 
-// The body-parser package is depecrated. express.json([options]) was introduced in Express v4.16.0 can
+// The body-parser package is depecrated. express.json([options]) was introduced in Express v4.16.0
 // Express can now parse incoming requests with JSON payloads
 app.use(express.json());
 
@@ -31,6 +32,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
 	// Tell Express will serve up production assets like main.js or main.css
