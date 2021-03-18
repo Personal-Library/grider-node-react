@@ -34,7 +34,7 @@ class Header extends React.Component {
 			<nav>
 				<div className='nav-wrapper' style={{ paddingLeft: '20px' }}>
 					<Link className='left brand-logo' to={this.props.auth ? '/surveys' : '/'}>
-						Emaily
+						<i className='material-icons'>face</i> Emaily
 					</Link>
 					<ul className='right'>{this.renderContent()}</ul>
 				</div>

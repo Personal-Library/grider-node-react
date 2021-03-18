@@ -6,4 +6,5 @@ module.exports = {
 	cookieKey: '',
 	stripePublishableKey: '',
 	stripeSecretKey: '',
+	sendgridKey: '',
 };

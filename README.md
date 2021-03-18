@@ -2,7 +2,7 @@
 
 ## Description
 
-This app allows users to send and collect feedback via email survey forms. The project was created for educational purposes during Stephen Grider's Node with React: Fullstack Web Development course on udemy.
+This app allows users to send and collect feedback via email survey forms. The project was created for educational purposes during Stephen Grider's Node with React: Fullstack Web Development course on Udemy.
 
 ## Technologies
 
@@ -36,7 +36,7 @@ Start local development server
 
 ## Usage
 
-The user is able to authenticate using Google OAuth 2.0, pay for credits via the Stripe API, and use those credits to create survey forms that are sent out to an email list. The user is then able to view the results and status of their surveys.
+The user is able to authenticate using Google OAuth 2.0, pay for credits via the Stripe API, and use those credits to create survey forms that are sent out to recipients via SendGrid. The user is then able to view the results and status of their surveys.
 
 ## Contributing
 
