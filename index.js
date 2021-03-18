@@ -13,6 +13,9 @@ mongoose.connect(keys.mongoUri, { useNewUrlParser: true, useUnifiedTopology: tru
 
 const app = express();
 
+// The body-parser package is depecrated. express.json([options]) was introduced in Express v4.16.0 can parse incoming requests with JSON payloads
+app.use(express.json());
+
 const THIRTY_DAYS = 2592000000;
 app.use(
 	cookieSession({

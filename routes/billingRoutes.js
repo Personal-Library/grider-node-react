@@ -1,15 +1,24 @@
 const keys = require('../config/keys');
 const stripe = require('stripe')(keys.stripeSecretKey);
+const requireLogin = require('../middlewares/requireLogin');
 
 module.exports = (app) => {
-	app.post('/api/stripe', (req, res) => {});
-};
+	// The requireLogin middleware will run and then call it's next() function if user is logged in
+	app.post('/api/stripe', requireLogin, async (req, res) => {
+		if (!req.user) {
+			return res.status(401).send({ error: 'You must log in!' });
+		}
 
-/*
-const charge = await stripe.charges.create({
-  amount: 2000,
-  currency: 'usd',
-  source: 'tok_mastercard',
-  description: 'My First Test Charge (created for API docs)',
-});
-*/
+		const charge = await stripe.charges.create({
+			amount: 500,
+			currency: 'usd',
+			source: req.body.id,
+			description: '$5 for 5 credits',
+		});
+
+		req.user.credits += 5;
+		const user = await req.user.save();
+
+		res.send(user);
+	});
+};

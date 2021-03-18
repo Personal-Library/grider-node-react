@@ -20,6 +20,7 @@ class Header extends React.Component {
 						<li>
 							<Payments />
 						</li>
+						<li style={{ padding: '0 10px' }}>Credits: {this.props.auth.credits}</li>
 						<li>
 							<a href='/api/logout'>Logout</a>
 						</li>
