@@ -20,8 +20,13 @@ module.exports = (app) => {
 		res.send('Thanks for voting!');
 	});
 
+	/**
+	 * Potential source of ERROR! When the webhook parses, it does not take into account extra '/'.
+	 * Please double check to make sure that the redirectDomain listed in dev.js AND on Heroku do not
+	 * contain a '/' at the end since SendGrid does not check and will duplicate it for us.
+	 */
 	app.post('/api/surveys/webhooks', (req, res) => {
-		const p = new Path('//api/surveys/:surveyId/:choice');
+		const p = new Path('/api/surveys/:surveyId/:choice');
 
 		_.chain(req.body)
 			.map(({ email, url }) => {
