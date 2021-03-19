@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, SUBMIT_SURVEY } from './types';
+import { FETCH_USER } from './types';
 
 export const fetchUser = () => async (dispatch) => {
 	const res = await axios.get('/api/current_user');
@@ -11,6 +11,13 @@ export const handleToken = (token) => async (dispatch) => {
 	dispatch({ type: FETCH_USER, payload: res.data });
 };
 
-export const submitSurvey = (values) => async (dispatch) => {
-	return { type: SUBMIT_SURVEY };
+export const submitSurvey = (values, history) => async (dispatch) => {
+	const res = await axios.post('/api/surveys', values);
+
+	/**
+	 * The SurveyFormReview component passed the history object to this action creator
+	 * We use it here to redirect the user after form submission is successful
+	 */
+	history.push('/surveys');
+	dispatch({ type: FETCH_USER, payload: res.data });
 };

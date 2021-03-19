@@ -1,6 +1,6 @@
 const keys = require('../../config/keys');
 
-module.exports = ({ body }) => {
+module.exports = ({ body, id }) => {
 	return `
 		<html>
 			<body>
@@ -9,10 +9,10 @@ module.exports = ({ body }) => {
 					<p>Please answer the following question:</p>
 					<p>${body}</p>
 					<div>
-						<a href="${keys.redirectDomain}/api/surveys/thanks">Yes</a>
+						<a href="${keys.redirectDomain}/api/surveys/${id}/yes">Yes</a>
 					</div>
 					<div>
-						<a href="${keys.redirectDomain}/api/surveys/thanks">No</a>
+						<a href="${keys.redirectDomain}/api/surveys/${id}/no">No</a>
 					</div>
 				</div>
 			</body>

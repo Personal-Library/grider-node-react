@@ -20,7 +20,11 @@ Clone the repository
 
 `git clone git@github.com:Personal-Library/grider-node-react.git`
 
-Replace all the keys in .env.production.example, .env.development.example, and dev.example.js
+Appropriately replace keys in .env.production.example, .env.development.example, and dev.example.js
+
+Run the following Ngrok command and use the forwarding address as your webhook url for SendGrid
+
+`npx ngrok http 5000`
 
 Change into the directory
 

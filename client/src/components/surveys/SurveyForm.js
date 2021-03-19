@@ -4,7 +4,7 @@ import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
 import SurveyField from './SurveyField';
 import validateEmails from '../../utils/validateEmails';
-import formFields from './formFields'
+import formFields from './formFields';
 
 class SurveyForm extends React.Component {
 	renderFields() {
@@ -39,15 +39,15 @@ const validate = (values) => {
 	const errors = {};
 
 	// Validate each email with RegEx
-	errors.emails = validateEmails(values.emails || '');
+	errors.recipients = validateEmails(values.recipients || '');
 
 	// Validate that each field contains text. This will override the above error for emails
 	formFields.forEach(({ name }) => {
 		if (!values[name]) {
 			errors[name] = `You must provide a ${name}`;
 		}
-		if (!values['emails']) {
-			errors.emails = 'You must provide at least one valid email';
+		if (!values['recipients']) {
+			errors.recipients = 'You must provide at least one valid email';
 		}
 	});
 

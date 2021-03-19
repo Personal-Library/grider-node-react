@@ -1,10 +1,11 @@
 // SurveyFormReview shows users their form inputs for review
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import formFields from './formFields';
 import * as actions from '../../actions';
 
-const SurveyFormReview = ({ onCancel, formValues, submitSurvey }) => {
+const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
 	const reviewFields = formFields.map(({ name, label }) => {
 		return (
 			<div key={name}>
@@ -25,10 +26,7 @@ const SurveyFormReview = ({ onCancel, formValues, submitSurvey }) => {
 			>
 				Back
 			</button>
-			<button
-				onClick={() => submitSurvey(formValues)}
-				className='green text-white btn-flat right'
-			>
+			<button onClick={() => submitSurvey(formValues, history)} className='green text-white btn-flat right'>
 				Send Survey
 				<i className='material-icons right'>email</i>
 			</button>
@@ -42,4 +40,5 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, actions)(SurveyFormReview);
+// The withRouter function passes along the history object to our component
+export default connect(mapStateToProps, actions)(withRouter(SurveyFormReview));
