@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
-import SurveyNew from './SurveyNew';
+import SurveyNew from './surveys/SurveyNew';
 
 class App extends React.Component {
 	componentDidMount() {
@@ -15,16 +15,14 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div className='container'>
 				<BrowserRouter>
-					<div>
+					<div className='container'>
 						<Header />
 						<Route exact path='/' component={Landing} />
 						<Route exact path='/surveys' component={Dashboard} />
 						<Route exact path='/surveys/new' component={SurveyNew} />
 					</div>
 				</BrowserRouter>
-			</div>
 		);
 	}
 }
